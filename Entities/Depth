@@ -1,1 +1,87 @@
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnny39871/Utilities/refs/heads/main/Doors%20Entity%20Spawner/Source.lua"))()
 
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "Depth", -- Custom name of your entity
+    Model = "https://github.com/Johnny39871/storage/blob/main/depth.rbxm", -- Can be GitHub file or rbxassetid
+    Speed = 350, -- Percentage, 100 = default Rush speed
+    DelayTime = 5, -- Time before starting cycles (seconds)
+    HeightOffset = 0,
+    CanKill = true,
+    KillRange = 100,
+    BreakLights = true,
+    BackwardsMovement = false,
+    FlickerLights = {
+        true, -- Enabled/Disabled
+        1, -- Time (seconds)
+    },
+    Cycles = {
+        Min = 2,
+        Max = 2,
+        WaitTime = 2,
+    },
+    CamShake = {
+        true, -- Enabled/Disabled
+        {5, 15, 0.1, 1}, -- Shake values (don't change if you don't know)
+        100, -- Shake start distance (from Entity to you)
+    },
+    Jumpscare = {
+        true, -- Enabled/Disabled
+        {
+            Image1 = "https://raw.githubusercontent.com/Tricot676/Doors-Hard-Mode/refs/heads/main/Entities/Png.png?token=GHSAT0AAAAAAEA4QVUWW5HHCLMJRQZQBH3U2SI6X6A", -- Image1 url
+            Image2 = "https://raw.githubusercontent.com/Tricot676/Doors-Hard-Mode/refs/heads/main/Entities/Png.png?token=GHSAT0AAAAAAEA4QVUWW5HHCLMJRQZQBH3U2SI6X6A", -- Image2 url
+            Shake = true,
+            Sound1 = {
+                10483790459, -- SoundId
+                { Volume = 0.5 }, -- Sound properties
+            },
+            Sound2 = {
+                5263560566, -- SoundId
+                { Volume = 0.5 }, -- Sound properties
+            },
+            Flashing = {
+                true, -- Enabled/Disabled
+                Color3.fromRGB(50, 115, 108), -- Color
+            },
+            Tease = {
+                false, -- Enabled/Disabled
+                Min = 1,
+                Max = 5,
+            },
+        },
+    },
+    CustomDialog = {"i couldnt figure out who you die", "entity is faster than rush and ambush", "And he can rebound 2 Times", "use what you leared from Ambush and rush tho.", "dont die "}, -- Custom death message
+})
+
+-----[[ Advanced ]]-----
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("Entity has spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("Entity has despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("Entity has started moving:", entityTable.Model)
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("Entity has finished rebound:", entityTable.Model)
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("Entity:", entityTable.Model, "has entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("Player has looked at entity:", entityTable.Model)
+end
+
+entity.Debug.OnDeath = function(entityTable)
+    warn("Player has died.")
+end
+------------------------
+
+-- Run the created entity
+Creator.runEntity(entity)
