@@ -1,0 +1,107 @@
+local cue2 = Instance.new("Sound")
+cue2.Parent = game.Workspace
+cue2.Name = "Scream"
+cue2.SoundId = "rbxassetid://9125712561"
+cue2.Volume = 4
+cue2.PlaybackSpeed = 1
+cue2.Looped = false
+cue2:Play()
+wait(4.6)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Something is following you.", true)
+
+ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+
+
+
+
+
+
+
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnny39871/Utilities/refs/heads/main/Doors%20Entity%20Spawner/Source.lua"))()
+
+-- Create entity
+local entity = Creator.createEntity({
+    CustomName = "Him", -- Custom name of your entity
+    Model = "rbxassetid://116597241771110", -- Can be GitHub file or rbxassetid
+    Speed = 550, -- Percentage, 100 = default Rush speed
+    DelayTime = 3, -- Time before starting cycles (seconds)
+    HeightOffset = 1,
+    CanKill = true,
+    KillRange = 50,
+    BreakLights = true,
+    BackwardsMovement = false,
+    FlickerLights = {
+        true, -- Enabled/Disabled
+        0, -- Time (seconds)
+    },
+    Cycles = {
+        Min = 20,
+        Max = 30,
+        WaitTime = 0,
+    },
+    CamShake = {
+        true, -- Enabled/Disabled
+        {5, 15, 0.1, 1}, -- Shake values (don't change if you don't know)
+        100, -- Shake start distance (from Entity to you)
+    },
+    Jumpscare = {
+        true, -- Enabled/Disabled
+        {
+            Image1 = "https://i.imgflip.com/721rrb.png", -- Image1 url
+            Image2 = "https://steamuserimages-a.akamaihd.net/ugc/860605452408707946/82076E365B146BF22C8A2FED763531CC54B01B86/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true", -- Image2 url
+            Shake = true,
+            Sound1 = {
+                2663254285, -- SoundId
+                { Volume = 15 }, -- Sound properties
+            },
+            Sound2 = {
+                5507830073, -- SoundId
+                { Volume = 10 }, -- Sound properties
+            },
+            Flashing = {
+                true, -- Enabled/Disabled
+                Color3.fromRGB(0, 0, 0), -- Color
+            },
+            Tease = {
+                true, -- Enabled/Disabled
+                Min = 1,
+                Max = 1,
+            },
+        },
+    },
+    CustomDialog = {"i couldnt figure out who you die", "entity is faster than rush and ambush", "And he can rebound 2 Times", "use what you leared from Ambush and rush tho.", "dont die "}, -- Custom death message
+})
+
+-----[[ Advanced ]]-----
+entity.Debug.OnEntitySpawned = function(entityTable)
+    print("Entity has spawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityDespawned = function(entityTable)
+    print("Entity has despawned:", entityTable.Model)
+end
+
+entity.Debug.OnEntityStartMoving = function(entityTable)
+    print("Entity has started moving:", entityTable.Model)
+end
+
+entity.Debug.OnEntityFinishedRebound = function(entityTable)
+    print("Entity has finished rebound:", entityTable.Model)
+end
+
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("Entity:", entityTable.Model, "has entered room:", room)
+end
+
+entity.Debug.OnLookAtEntity = function(entityTable)
+    print("Player has looked at entity:", entityTable.Model)
+end
+
+entity.Debug.OnDeath = function(entityTable)
+    warn("Player has died.")
+end
+------------------------
+
+-- Run the created entity
+Creator.runEntity(entity)
