@@ -3,10 +3,10 @@ local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnn
 -- Create entity
 local entity = Creator.createEntity({
     CustomName = "A-60", -- Custom name of your entity
-    Model = "rbxassetid://13949557886", -- Can be GitHub file or rbxassetid
+    Model = "rbxassetid://12876100449", -- Can be GitHub file or rbxassetid
     Speed = 600, -- Percentage, 100 = default Rush speed
     DelayTime = 5, -- Time before starting cycles (seconds)
-    HeightOffset = 1,
+    HeightOffset = 0,
     CanKill = true,
     KillRange = 100,
     BreakLights = true,
@@ -18,7 +18,7 @@ local entity = Creator.createEntity({
     Cycles = {
         Min = 17,
         Max = 28,
-        WaitTime = 2,
+        WaitTime = 0,
     },
     CamShake = {
         true, -- Enabled/Disabled
@@ -50,7 +50,7 @@ local entity = Creator.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Trauma...", "Use what you've learned from Rush and Ambush!", "This Mob Randomly Spawns Theres No Patten to it"}, -- Custom death message
+    CustomDialog = {"You died to who you call A-60...", "It behaves like Rush and Ambush, but moves at incredible speed and relentlessly passes by multiple times.", "Wait.", "Doesn't this entity seem familiar to you?", "Anyways, be sure to listen closely for its rumble and find shelter immediately."}, -- Custom death message
 })
 
 -----[[ Advanced ]]-----
