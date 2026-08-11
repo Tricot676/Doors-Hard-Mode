@@ -9,14 +9,7 @@ cue2:Play()
 wait(4.6)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Something is following you.", true)
 
-ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-
-
-
-
-
-
-
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
 local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnny39871/Utilities/refs/heads/main/Doors%20Entity%20Spawner/Source.lua"))()
 
@@ -70,7 +63,7 @@ local entity = Creator.createEntity({
             },
         },
     },
-    CustomDialog = {"i couldnt figure out who you die", "entity is faster than rush and ambush", "And he can rebound 2 Times", "use what you leared from Ambush and rush tho.", "dont die "}, -- Custom death message
+    CustomDialog = {"!!!!!!!!!!!!!!!!!!!!!"}, -- Custom death message
 })
 
 -----[[ Advanced ]]-----
@@ -79,7 +72,12 @@ entity.Debug.OnEntitySpawned = function(entityTable)
 end
 
 entity.Debug.OnEntityDespawned = function(entityTable)
-    print("Entity has despawned:", entityTable.Model)
+    print("Entity has despawned:", entityTable.Model
+    cue2.Name = "Despawn"
+    cue2.SoundId = "rbxassetid://7076365332"
+    cue2.Volume = 1
+    cue2:Play()
+    print("We will meet again soon...")
 end
 
 entity.Debug.OnEntityStartMoving = function(entityTable)
@@ -100,6 +98,7 @@ end
 
 entity.Debug.OnDeath = function(entityTable)
     warn("Player has died.")
+    print("Come back, I'd like to see you again...")
 end
 ------------------------
 
