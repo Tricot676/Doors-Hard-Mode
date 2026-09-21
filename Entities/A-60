@@ -1,6 +1,6 @@
 getgenv().death = false
  
-local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnny39871/Utilities/refs/heads/main/Doors%20Entity%20Spawner/Source.lua"))()
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Tricot676/Doors-Modes/refs/heads/main/Old%20Doors%20Entity%20Spawner/Johnny39871/Source.lua"))()
 
 -- one-time flag (persists across executions)
 _G.A60BadgeGiven = _G.A60BadgeGiven or false
