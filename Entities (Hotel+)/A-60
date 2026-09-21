@@ -54,8 +54,8 @@ local entity = Spawner:Create({
 	},
 	Death = {
 		Type = "Guiding", -- "Curious"
-		Hints = {"g = {"You died to who you call A-60...", "..", "It behaves like Rush and Ambush, but moves at incredible speed and relentlessly passes by multiple times.", "Wait.", "Doesn't this entity seem familiar to you?", "Anyways, be sure to listen closely for its rumble and find shelter immediately.")
-		Cause = ""
+		Hints = {"You died to who you call A-60...", "It behaves like Rush and Ambush, but moves at incredible speed and relentlessly passes by multiple times.", "Wait.", "Doesn't this entity seem familiar to you?", "Anyways, be sure to listen closely for its rumble and find shelter immediately.")
+		Cause = "A-60"
 	},
 	Jumpscare = {
 		Enabled = true, -- Set to true to show a jumpscare when the entity kills the player
