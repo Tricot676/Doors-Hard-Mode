@@ -55,7 +55,7 @@ local entity = Spawner:Create({
 	Death = {
 		Type = "Guiding", -- "Curious"
 		Hints = {"¡¡ THIS SMILE IS LIKE AMBUSH !!", "Hide and don't Smile Don't get Tricked"},
-		Cause = ""
+		Cause = "Smiler"
 	},
 	Jumpscare = {
 		Enabled = true, -- Set to true to show a jumpscare when the entity kills the player
