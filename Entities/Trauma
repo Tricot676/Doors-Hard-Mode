@@ -1,4 +1,4 @@
-local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnny39871/Utilities/refs/heads/main/Doors%20Entity%20Spawner/Source.lua"))()
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Tricot676/Doors-Modes/refs/heads/main/Old%20Doors%20Entity%20Spawner/Johnny39871/Source.lua"))()
 
 -- Create entity
 local entity = Creator.createEntity({
