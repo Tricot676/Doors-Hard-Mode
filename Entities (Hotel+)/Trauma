@@ -55,7 +55,7 @@ local entity = Spawner:Create({
 	Death = {
 		Type = "Guiding", -- "Curious"
 		Hints = {"You died to Trauma...", "Use what you've learned from Rush and Ambush!", "This Mob Randomly Spawns Theres No Patten to it"},
-		Cause = ""
+		Cause = "Trauma"
 	},
 	Jumpscare = {
 		Enabled = true, -- Set to true to show a jumpscare when the entity kills the player
