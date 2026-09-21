@@ -54,7 +54,7 @@ local entity = Spawner:Create({
 	},
 	Death = {
 		Type = "Guiding", -- "Curious"
-		Hints = {"You died to whom you call the Deer God", "Closets won't work, so try running", "Its form is incomprehensible to a human upclose...""},
+		Hints = {"You died to whom you call the Deer God", "Closets won't work, so try running", "Its form is incomprehensible to a human upclose..."},
 		Cause = "Deer God"
 	},
 	Jumpscare = {
