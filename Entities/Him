@@ -11,7 +11,7 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
-local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Johnny39871/Utilities/refs/heads/main/Doors%20Entity%20Spawner/Source.lua"))()
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Tricot676/Doors-Modes/refs/heads/main/Old%20Doors%20Entity%20Spawner/Johnny39871/Source%20(specifically%20for%20Him)"))()
 
 -- Create entity
 local entity = Creator.createEntity({
@@ -43,6 +43,7 @@ local entity = Creator.createEntity({
         {
             Image1 = "https://i.imgflip.com/721rrb.png", -- Image1 url
             Image2 = "https://steamuserimages-a.akamaihd.net/ugc/860605452408707946/82076E365B146BF22C8A2FED763531CC54B01B86/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true", -- Image2 url
+            AspectRatio = 16/9,
             Shake = true,
             Sound1 = {
                 2663254285, -- SoundId
@@ -72,7 +73,7 @@ entity.Debug.OnEntitySpawned = function(entityTable)
 end
 
 entity.Debug.OnEntityDespawned = function(entityTable)
-    print("Entity has despawned:", entityTable.Model
+    print("Entity has despawned:", entityTable.Model)
     cue2.Name = "Despawn"
     cue2.SoundId = "rbxassetid://7076365332"
     cue2.Volume = 1
